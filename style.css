@@ -1,0 +1,115 @@
+@import url("https://fonts.google.com/specimen/Fondamento/");
+* {
+  box-sizing: border-box;
+  font-family: Fondamento;
+  color: white;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgGBgYHBggPBgcGBhYHBgcGDQ8ICRAWIBEWIiARFRUYHCggGBolGxUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDQ0NGg8NFSsZFRkrKysrKystKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAM0A9gMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAACAAEDBf/EABUQAQEAAAAAAAAAAAAAAAAAAAAR/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEF/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A8+qjVWizyqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCrQqAKqFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6gqAKqFVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOoKgCqhVRTqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqCoAqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCrQrACqhVRTqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDrXOtBzqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqo1UCqGoAqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqoVUDqCoAqoVUU6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6qFVA6gqAKqNVAqqFbQKqhW0Cqo1lA6qNVAqqNZQOqjVQKqhW0CqoVtAqqNVAqqFbQKqjWUDqo1lA6qNVAqqNVAqhqAKqFVFOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOoKgCqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOqhVQOoKwBqo1VFKqjVQKqjVQKqjVQKqjVQKqjVQKqjVQKqjVQKqjVQKqjVQKqjVQKqjVQKqjVQKqjVQKqjVQKoagf/9k=");
+}
+.name {
+  text-align: center;
+  margin: 0;
+  font-size: 2em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
+
+.main-header {
+  background-color: rgba(0, 0, 0, 0.6);
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTg1QCWmeqh0EwcoMzbtQVUn28B7J4A6JT-Vg&usqp=CAU");
+  background-blend-mode: multiply;
+  background-size: cover;
+  text-align: center;
+}
+.main-nav {
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: lighter;
+  border-bottom: 1px solid white;
+}
+.main-nav li {
+  padding: 0 2%;
+}
+.nav li {
+  display: inline;
+}
+.nav a {
+  display: inline;
+  padding: 0.5em;
+  color: white;
+  text-decoration: none;
+}
+.nav a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.extra {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5em;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: multiply;
+  background-image: url("https://freefrontend.com/assets/img/css-background-patterns/css-lattice-pattern.png");
+  color: green;
+  font-size: 1em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.subtitle {
+  color: royalblue;
+}
+
+.atage {
+  color: tomato;
+}
+.my-image {
+  display: block;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  height: 20%;
+  border-radius: 20%;
+}
+
+.my-footer {
+  background-color: rgba(0, 0, 0, 0.6);
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTg1QCWmeqh0EwcoMzbtQVUn28B7J4A6JT-Vg&usqp=CAU");
+  background-blend-mode: multiply;
+  background-size: cover;
+  text-align: center;
+  margin: 0;
+}
+#p-footer {
+  color: tomato;
+  font-family: monospace;
+}
+
+.a-footer {
+  color: turquoise;
+}
+.u-footer li {
+  display: inline;
+  padding: 0 2%;
+}
+
+#image1 {
+  border-radius: 50%;
+  width: 2%;
+  margin: 0;
+}
+#image2 {
+  border-radius: 50%;
+  width: 2%;
+  margin: 0;
+}
+#image3 {
+  border-radius: 50%;
+  width: 2%;
+  margin: 0;
+}
+#copy {
+  color: tomato;
+}
