@@ -1,0 +1,92 @@
+-- Сложные запросы 
+SELECT name, salary
+from Worker
+where salary = (
+SELECT MAX(salary) from Worker
+);
+
+select name, salary from Worker
+where salary < (select avg(salary) from Worker);
+
+-- Создание таблиц One-to-Many
+
+
+CREATE TABLE IF NOT EXISTS Customer_prod (
+  customer_id int NOT NULL AUTO_INCREMENT,
+  customer_name varchar(50) NOT NULL,
+  contact_name varchar(50) NOT NULL,
+  country varchar(50) NOT NULL,
+  PRIMARY KEY (`customer_id`)
+);
+
+CREATE TABLE IF NOT EXISTS Orders(
+orderid int NOT NULL auto_increment primary key,
+customerid int not null,
+order_qty int not null,
+order_name varchar(100) not null,
+FOREIGN KEY(customerid)
+references Customer_prod(customer_id)
+);
+
+
+-- 1 Adidas David Branch UK 00134-343-4243 'street Baker 12' 1 tkan1 23 Moscow blue,
+-- 1 Adidas David Branch UK 00134-343-4243 'street Baker 12' 2 tkan1 23 Peter red,
+-- 1 Adidas David Branch UK 00134-343-4243 'street Baker 12' 3 sherst 56 Bishkek green,
+-- 1 Adidas David Branch UK 00134-343-4243 'street Baker 12' 4 kozha 100 Ulan Bator yellow,
+-- ...
+-- 1 Adidas David Branch UK 00134-343-4243 'street Baker 12' 10 000 123 kozha 200 China black;
+
+
+-- Добавление forein-key отношений в уже существующую таблицу
+alter table orders2
+add foreign key(customerid) 
+references customer2(customer_id);
+
+-- INNER JOIN ----
+
+-- INSERT INTO `mysqlLessonMorning`.`Customer_prod`
+-- (`customer_name`,
+-- `contact_name`,
+-- `country`)
+-- VALUES
+-- ('Adidas', 'Maksat Dolonov', 'UK'),
+-- ('Nike', 'Peter Grogory', 'USA'),
+-- ('Reebok', 'Anderson Silva', 'Brazil'),
+-- ('Tesla', 'Elon Mask', 'USA');
+
+
+-- INSERT INTO `mysqlLessonMorning`.`Orders`
+-- (`customerid`,
+-- `order_qty`,
+-- `order_name`)
+-- VALUES
+-- (2, 25, 'Tkan Kozha'),
+-- (2, 50, 'Tkan Belaya'),
+-- (1, 45, 'Alpaka'),
+-- (1, 25, 'Sherst mamonta'),
+-- (1, 25, 'Sherst mamonta chernaya'),
+-- (3, 33, 'Salofan'),
+-- (3, 55, 'Plastic'),
+-- (4, 54, 'Plastic'),
+-- (4, 100, 'Poleulitan'),
+-- (4, 10, 'Wheels'),
+-- (4, 1000, 'Battery');
+
+-- Inner join 
+select Orders.orderid, Customer_prod.customer_name, 
+Customer_prod.contact_name, Orders.order_name, Orders.order_qty
+FROM Orders
+inner join Customer_prod ON Orders.customerid = Customer_prod.customer_id
+order by Customer_prod.customer_name;
+
+
+
+
+
+
+
+
+
+
+
+

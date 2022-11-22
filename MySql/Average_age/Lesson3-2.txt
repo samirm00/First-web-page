@@ -1,0 +1,34 @@
+
+-- % _
+select * from Person
+where first_name like 'A%';
+
+-- Найти людей в имени кот-ых 5 букв, но последняя 5 ая буква 
+-- зак-ся на r
+Select * from Person
+where first_name like '____r';
+
+-- Найти людей в имени кот-ых 6 букв, но  5 ая буква это r
+Select * from Person
+where first_name like '____r_';
+
+Select * from Person
+where first_name like 'Al__ey';
+
+Select * from Person
+where first_name like 'Al__ey%';
+
+-- Найти работников у которых фамилия начинается на букву S и 
+-- заканчивается на букву ОВ- кол-во букв в фам-лии не важно
+
+SELECT * FROM Worker
+where name like '%S%ov';
+
+SELECT * FROM Worker
+where name like '%Sm___ov';
+
+SELECT * FROM Worker
+where name like '%n_%Sm___ov';
+
+SELECT * FROM Worker
+where name like '____________';

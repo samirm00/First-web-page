@@ -1,0 +1,50 @@
+-- Home work 
+-- Task 1
+
+DELIMITER //
+CREATE TRIGGER beforeInsertPerson
+BEFORE INSERT
+ON Personhw FOR EACH ROW
+BEGIN
+	IF new.age < 18 THEN
+		UPDATE Personinfo
+        set average_age = average_age - 1;
+    END IF;
+		
+END //
+DELIMITER ;
+
+
+-- Task 2
+DELIMITER //
+CREATE TRIGGER afterInsertPerson
+AFTER INSERT
+ON Personhw FOR EACH ROW
+BEGIN
+	IF new.age >= 18 THEN
+		UPDATE Personinfo
+			SET average_age = (SELECT AVG(age) from Personhw);
+	END IF;
+END //
+DELIMITER ;
+
+
+-- Task 3
+DELIMITER //
+CREATE TRIGGER beforeUpdatePerson
+BEFORE UPDATE
+ON Personhw FOR EACH ROW
+
+BEGIN
+	DECLARE error_mssg varchar(300);
+    SET error_mssg = CONCAT('New age', new.age, ' must be larger than 18!');
+    
+	IF new.age < 18 THEN
+		SIGNAL SQLSTATE '70000' 
+        SET MESSAGE_TEXT = error_mssg;
+	END IF;
+
+END //
+DELIMITER ;
+
+

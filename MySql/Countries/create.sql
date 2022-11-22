@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS Countries (
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+country_name VARCHAR(40) NOT NULL,
+city VARCHAR(40) NOT NULL,
+gdpUS$ INT NOT NULL, 
+populationMill FLOAT NOT NULL, 
+avg_living_year INT NOT NULL);
+
+ 

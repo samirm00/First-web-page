@@ -1,0 +1,39 @@
+SELECT * FROM PERSON
+Where company_person in ('IBM','Tennis','CClub');
+
+-- Not in
+Select * from Person 
+where company_person not in ('Tennis', 'iBM', 'BasketBall');
+
+-- LIMIT - Ограничение результатов, лимитирование результатов
+-- Отображение первых 3 людей соответствующие по опр критерию
+SELECT * FROM Person
+where address like 'Lev Tolstoy%'
+LIMIT 3;
+
+SELECT * FROM Person
+where address like 'Lev Tolstoy%'
+order by first_name asc
+LIMIT 7;
+
+SELECT * FROM Person
+where quant_child > 5
+order by first_name asc
+LIMIT 7;
+
+-- COUNT - Подсчет кол-во строк, который соответсвует определенному критерию
+-- Select Count(column_name) from table_name where condition;
+
+-- Показать общее кол-во людей в таблице
+SELECT COUNT(*) FROM Person;
+
+-- Посчитать кол-во людей у, которых имя нач-ся с буквы "А"
+SELECT COUNT(*) as 'Кол-во людей с именем А' from Person
+where first_name like 'A%';
+
+-- Посчитать кол-во работников у, кот-ых ЗП выше 30000
+SELECT COUNT(salary) FROM Worker
+where salary > 40000;
+
+SELECT COUNT(salary) FROM Worker
+where salary between 30000 and 40000;
