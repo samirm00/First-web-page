@@ -1,0 +1,99 @@
+SELECT * FROM mysqlLessonMorning.Person;
+
+-- WHERE Найти человека проживающающего по адресу Isanova 12
+Select * from Person
+where address = 'Isanova 12';
+
+-- WHERE Найти человека проживающающего по адресу Isanova 12 отображая его фамилию имя и имя супруги-а
+Select first_name, last_name, spouce_name, quant_child
+from mysqlLessonMorning.Person
+where address = 'Isanova 12';
+
+-- WHERE Найти человека проживающающего по адресу 'Lev Tolstoy 77' отображая его фамилию имя и имя супруги-а
+Select first_name, last_name, spouce_name, quant_child
+from mysqlLessonMorning.Person
+where address = 'Lev Tolstoy 77';
+
+-- WHERE Найти человека проживающающего по адресам Isanova 12, 'Lev Tolstoy 77' отображая его фамилию имя и имя супруги-а
+-- Where columnname in (data1, data2);
+Select first_name, last_name, spouce_name, quant_child
+from mysqlLessonMorning.Person
+where address in ('Lev Tolstoy 77', 'Isanova 12');
+
+-- WHERE Найти человека проживающающего по  профессиям Tennis', 'BasketBall','Football' 
+-- отображая его фамилию имя и имя супруги-а
+-- Where columnname in (data1, data2);
+
+Select first_name, last_name, spouce_name, quant_child
+from mysqlLessonMorning.Person
+where company_person in ('Tennis', 'BasketBall','Football' );
+
+-- WHERE AND
+-- Where column_name1 = data1 and column_name2 = data2
+-- Выборка по трем критериям. Найти человека который живет на Боконбаева 77 и у него 2 детей
+SELECT * FROM Person
+where address = 'Bokonbaeva 77' and quant_child = 2 and company_person= 'BasketBall';
+
+-- WHERE OR
+-- Where column_name1 = data1 and column_name2 = data2
+-- Выборка по трем критериям. Найти человека который живет или на Боконбаева 77 или у него 2 детей
+-- или он занимается баскетболом
+SELECT * FROM Person
+where address = 'Bokonbaeva 77' or quant_child = 1 or company_person= 'BasketBall';
+
+
+-- WHERE BETWEEN
+-- where column_name between data1 and data2
+-- Выбрать тех сотрудников у которых кол-во детей наход-ся в промежутке от 3 до 5
+
+SELECT * FROM Person
+WHERE quant_child BETWEEN 3 AND 5;
+
+-- SELECT * FROM Person
+-- WHERE first_name BETWEEN 'A' AND 'D';
+
+-- WHERE "<" ">" ">=" "<=" 
+-- WHERE column_name "<" ">" ">=" "<=" data1
+-- Выбрать тех сотрудников у, которых больше чем 3 детей (не включтельно)
+
+SELECT * FROM Person
+WHERE quant_child > 3;
+
+-- Выбрать тех сотрудников у, которых больше чем 3 детей (включтельно)
+SELECT * FROM Person
+WHERE quant_child >= 3;
+
+-- Выбрать тех сотрудников у, которых меньше чем 3 детей (не включтельно)
+SELECT * FROM Person
+WHERE quant_child < 3;
+
+-- Выбрать тех сотрудников у, которых дети в 
+-- кол-ве больше 5 и меньше 8 детей в семье (5-8)
+SELECT * FROM Person
+WHERE quant_child >= 5 and quant_child <= 8; 
+
+-- WHERE "<>" - не включать в промежуток
+-- where column_name <> data1
+-- Отобразить всех сотрудников за исключением тех людей у кого 5 детей
+SELECT * FROM Person
+WHERE quant_child <> 5;
+
+-- WHERE "not in " - не включать в промежуток несколько значений
+-- where column_name not in (data1, data2, ...)
+-- Отобразить всех сотрудников за исключением тех людей у кого 5 и 2 детей
+SELECT * FROM Person
+WHERE quant_child not in (5,2);
+
+-- 
+
+
+
+
+
+
+
+
+
+
+
+

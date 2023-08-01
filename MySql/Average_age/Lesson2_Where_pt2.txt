@@ -1,0 +1,22 @@
+-- WHERE column_name LIKE ' '
+-- Найти тех людей, которые живут на улице Lev Tolstoy
+SELECT * FROM Person
+WHERE address LIKE 'Lev Tolstoy %';
+
+-- Найти тех людей, у кого имя начинается с буквы "А" и фамилия начинается с буквы "D"
+SELECT * FROM Person
+WHERE first_name LIKE 'A%' and last_name like 'D%';
+
+-- Найти тех людей, у кого фамилия заканчивается на буквы "ov"
+SELECT * FROM Person
+WHERE last_name LIKE '%ov';
+
+-- Найти тех людей, у кого фамилия заканчивается на буквы "ov" и живут по улице 'Lev Tolstoy'
+SELECT * FROM Person
+WHERE last_name LIKE '% ov' and address Like 'Lev Tolstoy %';
+
+-- Переименовка столбцов для отображения таблицы
+-- Найти тех людей, у кого фамилия заканчивается на буквы "ov"
+SELECT first_name as 'Имя', last_name as 'Фамилия', 
+address as 'Адресс', spouce_name as 'Имя супруги-а' FROM Person
+WHERE last_name LIKE '%ov';

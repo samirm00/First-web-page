@@ -1,0 +1,9 @@
+use mySQLLesson;
+INSERT INTO Books (Title, Author, Genre, Quantpage, Country)
+VALUES
+('THE PERILOUS LIFE OF JADE YEO', 'ZEN CHO','CLASSIC', '87', 'UK'),
+('IN SEARCH OF LOST TIME', 'MARCEL PROUST', 'SCIFI', '450', 'BELGIUM'),
+('I FEEL BAD ABOUT MY NECK', 'NORA EPHRON', 'CLASSIC', '489', 'FRANCE');
+
+
+
